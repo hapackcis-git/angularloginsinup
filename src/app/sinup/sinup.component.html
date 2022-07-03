@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-4 py-3 mt-5 rounded shadow">
+            <form [formGroup]="SinupForm" (ngSubmit)="SignUp()">
+                <div class="mb-3">
+                  <label for="name" class="form-label">Name</label>
+                  <input type="text" formControlName="name" placeholder="Enter Name" class="form-control">
+  <span *ngIf="name && (name.invalid && name.touched)" style="color:red">Name Required</span>
+                </div>
+                                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" formControlName="email" placeholder="Enter Email" class="form-control">
+  <span *ngIf="email && (email.invalid && email.touched)" style="color:red">Email Required</span>
+                 
+                  </div>
+                  <div class="mb-3">
+                    <label for="mobile_no" class="form-label">Mobile No.</label>
+                    <input type="text" formControlName="mobile" placeholder="Enter Mobile No" class="form-control">
+  <span *ngIf="mobile && (mobile.invalid && mobile.touched)" style="color:red">Mobile Required</span>
+                 
+                  </div>
+                <div class="mb-3">
+                  <label for="password" class="form-label">Password</label>
+                  <input type="password" formControlName="password" placeholder="Enter Password" class="form-control" >
+  <span *ngIf="password && (password.invalid && password.touched)" style="color:red">Password Required</span>
+               
+                </div>
+             
+                <button type="submit" class="btn btn-primary">Sinup</button>
+                
+
+              </form>
+              <a class="mx-2" routerLink="/login">Already User.  Click to Login !</a>
+        </div>
+    </div>
+</div>
